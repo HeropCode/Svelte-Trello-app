@@ -5,7 +5,7 @@
 
   let isEditMode = false
   let title = ''
-  let textarea
+  let textareaEl
 
   function addList() {
     if (title) {
@@ -18,7 +18,7 @@
   async function onEditMode() {
     isEditMode = true
     await tick()
-    textarea && textarea.focus()
+    textareaEl && textareaEl.focus()
   }
   function offEditMode() {
     title = ''
@@ -36,11 +36,11 @@
     <div use:autoFocusout={offEditMode}
          class="edit-mode">
     <textarea bind:value={title}
-              bind:this={textarea}
-              on:keypress={keyEvents}
+              bind:this={textareaEl}
+              on:keydown={keyEvents}
               placeholder="Enter a title for this list..."></textarea>
-      <div>
-        <span class="btn btn--success"
+      <div class="actions">
+        <span class="btn success"
               on:click={addList}>Add List</span>
         <span class="btn"
               on:click={offEditMode}>Cancel</span>
@@ -56,12 +56,16 @@
 
 <style lang="scss">
   .create-list {
+    // .list와 같은 이유로 초기화 합니다.
     white-space: normal;
     display: inline-block;
     vertical-align: top;
     font-size: 16px;
     width: 290px;
     margin: 0 4px;
+    // rgba() 함수는 인수로 Red, Green, Blue, Opacity를 순서대로 받아야 하지만,
+    // SCSS에서 제공하는 같은 이름의 rgba()가 있으며,
+    // 이 함수는 Color, Opacity만 있으면 동작하기 때문에 Hex(hexadecimal) Color 사용시 아주 편리합니다.
     background: rgba(#ebecf0, .6);
     border-radius: 4px;
     line-height: 20px;

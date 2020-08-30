@@ -48,6 +48,15 @@ export let mergedLists = derived(
 
 // Actions
 //// Lists
+export const reorderList = payload => {
+  const { oldIndex, newIndex } = payload
+  lists.update($lists => {
+    const clone = { ...$lists[oldIndex] }
+    $lists.splice(oldIndex, 1)
+    $lists.splice(newIndex, 0, clone)
+    return $lists
+  })
+}
 export const createList = payload => {
   const { title } = payload
   lists.update($lists => {
@@ -58,6 +67,24 @@ export const createList = payload => {
     return $lists
   })
 }
+export const updateList = payload => {
+  const { listId, title } = payload
+  lists.update($lists => {
+    const foundList = $lists.find(list => list.id === listId)
+    foundList.title = title
+    console.log(foundList)
+    return $lists
+  })
+}
+export const deleteList = payload => {
+  const { listId } = payload
+  lists.update($lists => {
+    const foundIndex = $lists.findIndex(list => list.id === listId)
+    $lists.splice(foundIndex, 1)
+    return $lists
+  })
+}
+
 //// Cards
 export const reorderCard = payload => {
   const { cardId, listId } = payload
