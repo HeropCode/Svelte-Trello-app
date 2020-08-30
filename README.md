@@ -4,6 +4,8 @@ Svelte를 사용하는 Trello 클론 프로젝트입니다.
 
 [DEMO](https://boring-agnesi-165a0d.netlify.app/)
 
+![demo gif](https://github.com/HeropCode/Svelte-Trello-app/blob/master/assets/svelte-trello-example.gif)
+
 ## Svelte template(Rollup)으로 프로젝트 생성
 
 ```bash
