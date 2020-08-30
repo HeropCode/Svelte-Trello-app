@@ -27,13 +27,13 @@
   async function onEditMode() {
     isEditMode = true
     title = card.title
+    // 수정 모드(edit mode)인 경우 SortableJS가 동작하지 않도록 상태를 올림.
     dispatch('editMode', true)
     await tick()
     textareaEl && textareaEl.focus()
   }
   function offEditMode() {
     isEditMode = false
-    // 수정 모드(edit mode)인 경우 SortableJS가 동작하지 않도록 상태를 올림.
     dispatch('editMode', false)
   }
   function keyEvents(event) {

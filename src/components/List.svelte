@@ -57,7 +57,8 @@
                 on:editMode={toggleSortable} />
         {/each}
       </div>
-      <CreateCard listId={list.id} />
+      <CreateCard listId={list.id}
+                  on:editMode={toggleSortable} />
     </div>
   </div>
 {/if}

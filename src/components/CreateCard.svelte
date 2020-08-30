@@ -1,5 +1,5 @@
 <script>
-  import { tick } from 'svelte'
+  import { tick, createEventDispatcher } from 'svelte'
   import { createCard } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
@@ -7,6 +7,7 @@
   let isEditMode = false
   let title = ''
   let textareaEl
+  const dispatch = createEventDispatcher()
 
   function addCard() {
     // 입력된 title이 있는 경우만 실행.
@@ -20,12 +21,15 @@
   }
   async function onEditMode() {
     isEditMode = true
+    title = ''
+    // 수정 모드(edit mode)인 경우 SortableJS가 동작하지 않도록 상태를 올림.
+    dispatch('editMode', true)
     await tick()
     textareaEl && textareaEl.focus()
   }
   function offEditMode() {
-    title = ''
     isEditMode = false
+    dispatch('editMode', false)
   }
   function keyEvents(event) {
     event.key === 'Enter' && addCard()
