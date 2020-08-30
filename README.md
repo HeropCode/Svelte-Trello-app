@@ -45,9 +45,10 @@ $ npm i -D @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 - node-sass: SCSS를 CSS로 컴파일합니다.
 - crypto-random-string: ID로 사용할 고유한 랜덤 문자열을 생성합니다.
 - sortablejs: Drag and Drop으로 목록을 쉽게 정렬할 수 있습니다.
+- lodash: 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리입니다.
 
 추가 패키지를 다음과 같이 한번에 설치할 수 있습니다.
 
 ```bash
-$ npm i -D @rollup/plugin-alias rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs
+$ npm i -D @rollup/plugin-alias rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs lodash
 ```
