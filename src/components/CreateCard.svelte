@@ -33,7 +33,7 @@
   }
   function keyEvents(event) {
     event.key === 'Enter' && addCard()
-    event.key === 'Esc' && offEditMode() // IE/Edge
+    event.key === 'Esc' && offEditMode() // for Edge Browser
     event.key === 'Escape' && offEditMode()
   }
 </script>

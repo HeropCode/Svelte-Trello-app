@@ -36,9 +36,8 @@
     dispatch('editMode', false)
   }
   function keyEvents(event) {
-    console.log(event.key)
     event.key === 'Enter' && saveTitle()
-    event.key === 'Esc' && offEditMode() // IE/Edge
+    event.key === 'Esc' && offEditMode() // for Edge Browser
     event.key === 'Escape' && offEditMode()
   }
 </script>
@@ -63,7 +62,7 @@
   <h2 class="title">
     {list.title}
     <div class="btn small edit-btn-for-list"
-         on:click|stopPropagation={onEditMode}>
+         on:click={onEditMode}>
       Edit
     </div>
   </h2>
