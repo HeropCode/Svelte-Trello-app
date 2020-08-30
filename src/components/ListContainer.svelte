@@ -10,7 +10,6 @@
   let sortableLists // List 정렬를 위한 SortableJS 인스턴스를 지정합니다.
 
   function listSortHandler(event) {
-    console.log(event)
     reorderList({
       oldIndex: event.oldIndex,
       newIndex: event.newIndex
@@ -35,9 +34,8 @@
   <div bind:this={listsEl}
        class="lists">
     {#each $mergedLists as list (list.id)}
-      <!-- List 컴포넌트 내부에서 sortableLists가 변경되기 때문에 bind로 연결합니다. -->
       <List {list}
-            bind:sortableLists={sortableLists} />
+            {sortableLists} />
     {/each}
     <CreateList />
   </div>

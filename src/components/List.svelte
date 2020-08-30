@@ -16,10 +16,9 @@
     console.log(event) // event 객체에 정렬에 대한 다양한 정보가 들어있어요.
     reorderCard({
       cardId: event.item.dataset.cardId,
-      fromListId: event.from.dataset.listId,
-      toListId: event.to.dataset.listId,
-      oldIndex: event.oldIndex,
-      newIndex: event.newIndex
+      listId: event.to.dataset.listId,
+      // fromListEl: event.from,
+      toListEl: event.to
     })
   }
 

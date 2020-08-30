@@ -26,7 +26,7 @@
   }
   function keyEvents(event) {
     event.key === 'Enter' && addList()
-    event.key === 'Esc' && offEditMode() // IE/Edge
+    event.key === 'Esc' && offEditMode() // for Edge Browser
     event.key === 'Escape' && offEditMode()
   }
 </script>
