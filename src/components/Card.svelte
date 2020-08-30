@@ -23,6 +23,9 @@
     deleteCard({
       cardId: card.id
     })
+    // removeCard 함수는 Edit Mode에서 동작하기 때문에,
+    // 컴포넌트(요소)가 삭제되면 Edit Mode를 꺼야 SortableJS 기능이 정상 동작할 수 있습니다.
+    offEditMode()
   }
   async function onEditMode() {
     isEditMode = true
