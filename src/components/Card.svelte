@@ -5,8 +5,8 @@
 
   export let card
   let isEditMode = false
-  let title = card.title
-  let textarea
+  let title
+  let textareaEl
   const dispatch = createEventDispatcher()
 
   function saveCard() {
@@ -26,12 +26,12 @@
   }
   async function onEditMode() {
     isEditMode = true
+    title = card.title
     dispatch('editMode', true)
     await tick()
-    textarea && textarea.focus()
+    textareaEl && textareaEl.focus()
   }
   function offEditMode() {
-    title = card.title
     isEditMode = false
     // 수정 모드(edit mode)인 경우 SortableJS가 동작하지 않도록 상태를 올림.
     dispatch('editMode', false)
@@ -51,22 +51,25 @@
       <div use:autoFocusout={offEditMode}
            class="edit-mode">
         <textarea bind:value={title}
-                  bind:this={textarea}
+                  bind:this={textareaEl}
                   placeholder="Enter a title for this card..."
                   on:keydown={keyEvents}></textarea>
-        <div>
-          <span class="btn btn--success"
+        <div class="actions">
+          <span class="btn success"
                 on:click={saveCard}>Save</span>
           <span class="btn"
                 on:click={offEditMode}>Cancel</span>
-          <span class="btn btn--danger"
+          <span class="btn danger"
                 on:click={removeCard}>Delete Card</span>
         </div>
       </div>
     {:else}
-      <div class="title"
-           on:click={onEditMode}>
+      <div class="title">
         {card.title}
+        <div class="btn small"
+             on:click={onEditMode}>
+          Edit
+        </div>
       </div>
     {/if}
   </div>
@@ -94,8 +97,6 @@
     }
   }
   .title {
-    white-space: normal;
-    word-break: break-all;
     position: relative;
     border-radius: 4px;
     cursor: pointer;
@@ -106,6 +107,15 @@
     user-select: none;
     &:hover {
       background: #F5F5F5;
+    }
+    .btn {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      display: none;
+    }
+    &:hover .btn {
+      display: block;
     }
   }
 </style>

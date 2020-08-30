@@ -2,6 +2,8 @@
 
 Svelte를 사용하는 Trello 클론 프로젝트입니다.
 
+[DEMO](https://boring-agnesi-165a0d.netlify.app/)
+
 ## Svelte template(Rollup)으로 프로젝트 생성
 
 ```bash
@@ -37,7 +39,7 @@ $ npm i -D @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 
 - @rollup/plugin-alias: 경로 별칭을 사용해 더 편리하게 모듈을 가져올 수 있습니다.
 - rollup-plugin-node-builtins: Node 내장 API를 사용할 수 있습니다.
-- rollup-plugin-node-globals: Node 일부 모듈이 필요로 하는 전역 API를 사용할 수 있습니다.
+- rollup-plugin-node-globals: 일부 Node 모듈이 필요로 하는 전역 API를 사용할 수 있습니다.
 - svelte-preprocess: PostCSS(Autoprefixer), SCSS, TypeScript 등을 지원하는 Svelte 전 처리기입니다.
 - autoprefixer: CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.
 - node-sass: SCSS를 CSS로 컴파일합니다.

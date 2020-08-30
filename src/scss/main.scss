@@ -1,35 +1,55 @@
 .actions {
-  font-size: 0;
+  display: flex;
+  padding-bottom: 10px;
   .btn {
-    font-size: 14px;
     margin-right: 4px;
   }
 }
 .btn {
+  // SCSS에서 반복적으로 사용되는 값을 다룰 때는,
+  // 변수로 만들어서 사용하면 편리합니다.
+  $btn-color--default: #e2e6ea;
+  $btn-color--success: #61bd4f;
+  $btn-color--danger: #eb5a46;
+  $text-color--default: #212529;
+  $text-color--colorful: #fff;
+
   display: inline-block;
   padding: 6px 12px;
-  background-color: #e2e6ea;
-  color: #212529;
+  background-color: $btn-color--default;
+  color: $text-color--default;
   border-radius: 4px;
   line-height: 20px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 400;
   &:hover {
-    background-color: darken(#e2e6ea, 10%);
+    // SCSS에서 제공하는 darken 함수는,
+    // 인수로 Color, Amount를 순서대로 작성해,
+    // (10%) 더 어두운 색을 만들 수 있습니다.
+    background-color: darken($btn-color--default, 10%);
   }
-  &--success {
-    background-color: #61bd4f;
-    color: #FFF;
+  &.success {
+    background-color: $btn-color--success;
+    color: $text-color--colorful;
     &:hover {
-      background-color: darken(#61bd4f, 10%);
+      background-color: darken($btn-color--success, 10%);
     }
   }
-  &--danger {
-    background-color: #eb5a46;
-    color: #FFF;
+  &.danger {
+    background-color: $btn-color--danger;
+    color: $text-color--colorful;
     &:hover {
-      background-color: darken(#eb5a46, 10%);
+      background-color: darken($btn-color--danger, 10%);
     }
+    // 모든 위험한(danger) 버튼의 글자 뒤에는 !(느낌표)를 붙입니다.
+    &::after {
+      content: "!";
+    }
+  }
+  &.small {
+    font-size: 12px;
+    padding: 0 6px;
   }
 }
 .edit-mode {

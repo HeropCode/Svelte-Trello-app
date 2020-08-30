@@ -6,7 +6,7 @@
   export let listId
   let isEditMode = false
   let title = ''
-  let textarea
+  let textareaEl
 
   function addCard() {
     // 입력된 title이 있는 경우만 실행.
@@ -21,7 +21,7 @@
   async function onEditMode() {
     isEditMode = true
     await tick()
-    textarea && textarea.focus()
+    textareaEl && textareaEl.focus()
   }
   function offEditMode() {
     title = ''
@@ -38,11 +38,11 @@
   <div use:autoFocusout={offEditMode}
        class="edit-mode">
     <textarea bind:value={title}
-              bind:this={textarea}
+              bind:this={textareaEl}
               on:keypress={keyEvents}
               placeholder="Enter a title for this card..."></textarea>
     <div class="actions">
-      <span class="btn btn--success"
+      <span class="btn success"
             on:click={addCard}>Add Card</span>
       <span class="btn"
             on:click={offEditMode}>Cancel</span>
