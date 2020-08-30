@@ -43,7 +43,7 @@
        class="edit-mode">
     <textarea bind:value={title}
               bind:this={textareaEl}
-              on:keypress={keyEvents}
+              on:keydown={keyEvents}
               placeholder="Enter a title for this card..."></textarea>
     <div class="actions">
       <span class="btn success"
