@@ -34,7 +34,7 @@ $ code .
 기본 패키지를 다음과 같이 업데이트하세요.
 
 ```bash
-$ npm i -D @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
+$ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 ```
 
 ## 추가 패키지
