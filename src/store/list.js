@@ -4,6 +4,9 @@ import _find from 'lodash/find'
 import _remove from 'lodash/remove'
 import _cloneDeep from 'lodash/cloneDeep'
 
+// 학습하시는 분들은 필요치 않은 코드입니다.
+window.localStorage.getItem('cards') && window.localStorage.clear()
+
 const crypto = () => cryptoRandomString({ length: 10 })
 const repoLists = JSON.parse(window.localStorage.getItem('lists')) || []
 
