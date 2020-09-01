@@ -3,6 +3,7 @@
   import { updateCard, deleteCard } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
+  export let list
   export let card
   let isEditMode = false
   let title
@@ -13,6 +14,7 @@
     // 빈 값이 저장되는 것을 방지.
     if (title) {
       updateCard({
+        listId: list.id,
         cardId: card.id,
         title
       })
@@ -21,6 +23,7 @@
   }
   function removeCard() {
     deleteCard({
+      listId: list.id,
       cardId: card.id
     })
     // removeCard 함수는 Edit Mode에서 동작하기 때문에,

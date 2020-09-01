@@ -58,9 +58,9 @@
   .create-list {
     // .list와 같은 이유로 초기화 합니다.
     white-space: normal;
+    font-size: 16px;
     display: inline-block;
     vertical-align: top;
-    font-size: 16px;
     width: 290px;
     margin: 0 4px;
     // rgba() 함수는 인수로 Red, Green, Blue, Opacity를 순서대로 받아야 하지만,
