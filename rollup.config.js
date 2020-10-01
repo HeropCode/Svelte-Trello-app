@@ -74,6 +74,7 @@ export default {
 					prependData: '@import "./src/scss/main.scss";',
 				},
 				// PostCSS는 Autoprefixer를 설치하면 같이 설치됩니다.
+				// Autoprefixer는 CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.
 				postcss: {
 					plugins: [
 						require('autoprefixer')()
