@@ -61,7 +61,7 @@ export default {
 			preprocess: sveltePreprocess({
 				scss: {
 					// 전역에서 사용할 SCSS 파일을 지정합니다.
-					// 단, style 태그에 lang="scss"가 지정되어 있어야 합니다.
+					// 단, style 태그에 lang="scss"가 지정되어 있어야 적용됩니다.
 					prependData: '@import "./src/scss/main.scss";',
 				},
 				// PostCSS는 Autoprefixer를 설치하면 같이 설치됩니다.

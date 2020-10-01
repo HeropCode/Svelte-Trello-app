@@ -1,5 +1,5 @@
 <script>
-  import { tick, createEventDispatcher } from 'svelte'
+  import { tick, createEventDispatcher, onDestroy } from 'svelte'
   import { updateCard, deleteCard } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
@@ -48,6 +48,10 @@
     event.key === 'Esc' && offEditMode() // for Edge Browser
     event.key === 'Escape' && offEditMode()
   }
+
+  onDestroy(() => {
+    offEditMode()
+  })
 </script>
 
 {#if card}

@@ -9,15 +9,9 @@
   let listsEl // SortableJS에서 사용할 List 목록 요소를 지정합니다.
   let sortableLists // List 정렬를 위한 SortableJS 인스턴스를 지정합니다.
 
+  // lists 스토어의 값($lists)이 변경되면 아래 반응성 구문이 실행됩니다.
   $: {
     console.log($lists)
-  }
-
-  function listSortHandler(event) {
-    reorderList({
-      oldIndex: event.oldIndex,
-      newIndex: event.newIndex
-    })
   }
 
   onMount(() => {
@@ -28,7 +22,12 @@
       delay: 20,
       animation: 0,
       forceFallback: true,
-      onEnd: listSortHandler
+      onEnd(event) {
+        reorderList({
+          oldIndex: event.oldIndex,
+          newIndex: event.newIndex
+        })
+      }
     })
   })
 </script>
