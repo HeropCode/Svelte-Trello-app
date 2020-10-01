@@ -53,5 +53,5 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 추가 패키지를 다음과 같이 한번에 설치할 수 있습니다.
 
 ```bash
-$ npm i -D @rollup/plugin-alias rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs lodash
+$ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs lodash
 ```
