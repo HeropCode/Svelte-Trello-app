@@ -40,7 +40,7 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 ## 추가 패키지
 
 - @rollup/plugin-alias: 경로 별칭을 사용해 더 편리하게 모듈을 가져올 수 있습니다.
-- @rollup/plugin-strip: 배포용 제품은(개발 모드가 아닐 때) 'console.log' 같은 Console 명령을 제거하는 것이 좋습니다.
+- @rollup/plugin-strip: 배포용 제품은(개발 모드가 아닐 때) `console.log` 같은 Console 명령을 제거하는 것이 좋습니다.
 - rollup-plugin-node-builtins: Node 내장 API를 사용할 수 있습니다.
 - rollup-plugin-node-globals: 일부 Node 모듈이 필요로 하는 전역 API를 사용할 수 있습니다.
 - svelte-preprocess: PostCSS(Autoprefixer), SCSS, TypeScript 등을 지원하는 Svelte 전 처리기입니다.
