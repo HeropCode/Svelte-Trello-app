@@ -1,6 +1,6 @@
 <script>
   import { tick, createEventDispatcher } from 'svelte'
-  import { updateList, deleteList } from '~/store/list'
+  import { lists } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
   export let list
@@ -11,8 +11,8 @@
 
   function saveTitle() {
     // 빈 값이 저장되는 것을 방지
-    if (title) {
-      updateList({
+    if (title.trim()) {
+      lists.edit({
         listId: list.id,
         title
       })
@@ -20,7 +20,7 @@
     offEditMode()
   }
   function removeList() {
-    deleteList({
+    lists.remove({
       listId: list.id
     })
     // removeList 함수는 Edit Mode에서 동작하기 때문에,

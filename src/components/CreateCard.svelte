@@ -1,6 +1,6 @@
 <script>
   import { tick, createEventDispatcher } from 'svelte'
-  import { createCard } from '~/store/list'
+  import { cards } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
   export let listId
@@ -11,8 +11,8 @@
 
   function addCard() {
     // 입력된 title이 있는 경우만 실행.
-    if (title) {
-      createCard({
+    if (title.trim()) {
+      cards.add({
         listId,
         title
       })

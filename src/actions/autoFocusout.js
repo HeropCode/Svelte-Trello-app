@@ -1,5 +1,5 @@
 export function autoFocusout(el, focusoutListener) {
-  // 아래에서 제거 가능하도록 변수(메모리)에 할당합니다.
+  // 아래에서(destroy) 제거 가능하도록 이벤트 리스너를 변수(메모리)에 할당합니다.
   const focusinListener = (e) => e.stopPropagation()
 
   // Svelte Action은 DOM이 생성될 때 호출되기 때문에,

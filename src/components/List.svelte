@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import Sortable from 'sortablejs'
 
-  import { reorderCard } from '~/store/list'
+  import { cards } from '~/store/list'
   import Card from './Card.svelte'
   import CreateCard from './CreateCard.svelte'
   import ListTitle from './ListTitle.svelte'
@@ -28,7 +28,7 @@
       // 요소의 DnD가 종료되면 실행할 핸들러(함수)를 지정합니다.
       onEnd(event) {
         console.log(event) // event 객체의 정렬에 대한 다양한 정보가 들어있어요.
-        reorderCard({
+        cards.reorder({
           fromListId: event.from.dataset.listId,
           toListId: event.to.dataset.listId,
           oldIndex: event.oldIndex,

@@ -1,6 +1,6 @@
 <script>
   import { tick } from 'svelte'
-  import { createList } from '~/store/list'
+  import { lists } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
   let isEditMode = false
@@ -8,8 +8,8 @@
   let textareaEl
 
   function addList() {
-    if (title) {
-      createList({
+    if (title.trim()) {
+      lists.add({
         title
       })
     }

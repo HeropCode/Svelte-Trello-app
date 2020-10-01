@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import Sortable from 'sortablejs'
 
-  import { lists, reorderList } from '~/store/list'
+  import { lists } from '~/store/list'
   import List from '~/components/List.svelte'
   import CreateList from '~/components/CreateList.svelte'
 
@@ -23,7 +23,7 @@
       animation: 0,
       forceFallback: true,
       onEnd(event) {
-        reorderList({
+        lists.reorder({
           oldIndex: event.oldIndex,
           newIndex: event.newIndex
         })
@@ -46,8 +46,7 @@
 <style lang="scss">
   .list-container {
     width: 100vw;
-    height: 100vh;
-    background: orange;
+    height: calc(100vh - 40px);
     padding: 30px;
     box-sizing: border-box;
     overflow-x: auto;

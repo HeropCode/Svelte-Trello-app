@@ -1,6 +1,6 @@
 <script>
-  import { tick, createEventDispatcher, onDestroy } from 'svelte'
-  import { updateCard, deleteCard } from '~/store/list'
+  import { onDestroy, tick, createEventDispatcher } from 'svelte'
+  import { cards } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
   export let list
@@ -12,8 +12,8 @@
 
   function saveCard() {
     // 빈 값이 저장되는 것을 방지.
-    if (title) {
-      updateCard({
+    if (title.trim()) {
+      cards.edit({
         listId: list.id,
         cardId: card.id,
         title
@@ -22,7 +22,7 @@
     offEditMode()
   }
   function removeCard() {
-    deleteCard({
+    cards.remove({
       listId: list.id,
       cardId: card.id
     })
