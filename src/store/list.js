@@ -18,7 +18,10 @@ _lists.subscribe($lists => {
 })
 
 // For external use.
-//// Lists
+// Lists
+// 커스텀 스토어를 생성합니다.
+// 커스텀 스토어는 자동 구독이 가능하도록 최소한 스토어의 `subscribe` 메소드를 필수로 포함해야 합니다!
+// 스토어의 `set`, `update` 메소드는 선택사항입니다.
 export let lists = {
   // 스토어 자동 구독을 위해 필요합니다!
   subscribe: _lists.subscribe,
@@ -67,7 +70,9 @@ export let lists = {
   }
 }
 
-//// Cards
+// Cards
+// `cards`를 `subscribe` 메소드가 없기 때문에 커스텀 스토어라고 부를 수 없습니다.
+// 단지, 외부에서 사용하는 여러 메소드가 포함된 객체입니다.
 export const cards = {
   reorder(payload) {
     const {
