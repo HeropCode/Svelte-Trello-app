@@ -31,30 +31,38 @@
     isEditMode = false
     dispatch('editMode', false)
   }
-  function keyEvents(event) {
-    event.key === 'Enter' && addCard()
-    event.key === 'Esc' && offEditMode() // for Edge Browser
-    event.key === 'Escape' && offEditMode()
-  }
 </script>
 
 {#if isEditMode}
-  <div use:autoFocusout={offEditMode}
-       class="edit-mode">
-    <textarea bind:value={title}
-              bind:this={textareaEl}
-              on:keydown={keyEvents}
-              placeholder="Enter a title for this card..."></textarea>
+  <div
+    use:autoFocusout={offEditMode}
+    class="edit-mode">
+    <textarea
+      bind:value={title}
+      bind:this={textareaEl}
+      placeholder="Enter a title for this card..."
+      on:keydown={event => {
+        event.key === 'Enter' && addCard()
+        event.key === 'Esc' && offEditMode() // for Edge Browser
+        event.key === 'Escape' && offEditMode()
+      }}></textarea>
     <div class="actions">
-      <span class="btn success"
-            on:click={addCard}>Add Card</span>
-      <span class="btn"
-            on:click={offEditMode}>Cancel</span>
+      <span
+        class="btn success"
+        on:click={addCard}>
+        Add Card
+      </span>
+      <span
+        class="btn"
+        on:click={offEditMode}>
+        Cancel
+      </span>
     </div>
   </div>
 {:else}
-  <div class="add-another-card"
-       on:click={onEditMode}>
+  <div
+    class="add-another-card"
+    on:click={onEditMode}>
     + Add another card
   </div>
 {/if}

@@ -9,13 +9,13 @@
 
   export let list
   export let sortableLists
-  let cardsEl // SortableJS에서 사용할 Card 목록 요소를 지정합니다.
   let sortableCards // Card 정렬를 위한 SortableJS 인스턴스를 지정합니다.
+  let cardsEl // SortableJS에서 사용할 Card 목록 요소를 지정합니다.
 
   function disableSortable(event) {
     console.log(event.detail)
-    sortableCards.option('disabled', event.detail)
-    sortableLists.option('disabled', event.detail)
+    sortableLists.option('disabled', event.detail) // For Lists
+    sortableCards.option('disabled', event.detail) // For Cards
   }
 
   onMount(() => {
@@ -43,21 +43,27 @@
   <div class="list">
     <div class="list__inner">
       <div class="list__heading">
-        <ListTitle {list}
-                   on:editMode={disableSortable} />
-        <p>{list.cards.length} cards</p>
+        <ListTitle
+          {list}
+          on:editMode={disableSortable} />
+        <p>
+          {list.cards.length} cards
+        </p>
       </div>
-      <div data-list-id={list.id}
-           bind:this={cardsEl}
-           class="list__cards">
+      <div
+        data-list-id={list.id}
+        bind:this={cardsEl}
+        class="list__cards">
         {#each list.cards as card (card.id)}
-          <Card {card}
-                {list}
-                on:editMode={disableSortable} />
+          <Card
+            {card}
+            {list}
+            on:editMode={disableSortable} />
         {/each}
       </div>
-      <CreateCard listId={list.id}
-                  on:editMode={disableSortable} />
+      <CreateCard
+        listId={list.id}
+        on:editMode={disableSortable} />
     </div>
   </div>
 {/if}

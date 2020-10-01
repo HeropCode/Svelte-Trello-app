@@ -1,13 +1,18 @@
+// built-in
 import path from 'path';
-import svelte from 'rollup-plugin-svelte';
+// @rollup
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import alias from '@rollup/plugin-alias';
+import strip from '@rollup/plugin-strip';
+// rollup
+import svelte from 'rollup-plugin-svelte';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import replace from 'rollup-plugin-replace';
 import globals from 'rollup-plugin-node-globals';
 import builtins from 'rollup-plugin-node-builtins';
+// external
 import sveltePreprocess from 'svelte-preprocess';
 
 // Rollup Watch 기능(-w)이 동작하는 경우만 '개발 모드'라고 판단합니다.
@@ -112,12 +117,17 @@ export default {
 			]
 		}),
 
+		// For Development mode!
 		// 개발 모드에서는 번들이 생성되면 `npm run start`를 호출합니다.
 		!production && serve(),
-
 		// 개발 모드에서는 'public' 디렉토리에서 변경사항이 확인되면 브라우저를 새로고침합니다.
 		!production && livereload('public'),
 
+		// For Production mode!
+		// 제품 모드에서는 'console.log' 같은 Console 명령을 제거합니다.
+		production && strip({
+			include: '**/*.(svelte|js)',
+		}),
 		// 제품 모드에서는 번들을 최소화(최적화)합니다.
 		production && terser()
 	],

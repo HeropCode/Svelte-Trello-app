@@ -1,5 +1,5 @@
 <script>
-  import { tick, createEventDispatcher } from 'svelte'
+  import { onDestroy, tick, createEventDispatcher } from 'svelte'
   import { lists } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
@@ -38,34 +38,49 @@
     isEditMode = false
     dispatch('editMode', false)
   }
-  function keyEvents(event) {
-    event.key === 'Enter' && saveTitle()
-    event.key === 'Esc' && offEditMode() // for Edge Browser
-    event.key === 'Escape' && offEditMode()
-  }
+
+  onDestroy(() => {
+    offEditMode()
+  })
 </script>
 
 {#if isEditMode}
-  <div use:autoFocusout={offEditMode}
-       class="edit-mode">
-        <textarea bind:value={title}
-                  bind:this={textareaEl}
-                  placeholder="Enter a title for this list..."
-                  on:keydown={keyEvents}></textarea>
+  <div
+    use:autoFocusout={offEditMode}
+    class="edit-mode">
+      <textarea
+        bind:value={title}
+        bind:this={textareaEl}
+        placeholder="Enter a title for this list..."
+        on:keydown={event => {
+          event.key === 'Enter' && saveTitle()
+          event.key === 'Esc' && offEditMode() // for Edge Browser
+          event.key === 'Escape' && offEditMode()
+        }}></textarea>
     <div class="actions">
-          <span class="btn success"
-                on:click={saveTitle}>Save</span>
-      <span class="btn"
-            on:click={offEditMode}>Cancel</span>
-      <span class="btn danger"
-            on:click={removeList}>Delete List</span>
+      <span
+        class="btn success"
+        on:click={saveTitle}>
+        Save
+      </span>
+      <span
+        class="btn"
+        on:click={offEditMode}>
+        Cancel
+      </span>
+      <span
+        class="btn danger"
+        on:click={removeList}>
+        Delete List
+      </span>
     </div>
   </div>
 {:else}
   <h2 class="title">
     {list.title}
-    <div class="btn small edit-btn-for-list"
-         on:click={onEditMode}>
+    <div
+      class="btn small edit-btn-for-list"
+      on:click={onEditMode}>
       Edit
     </div>
   </h2>

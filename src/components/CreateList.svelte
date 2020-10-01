@@ -24,31 +24,39 @@
     title = ''
     isEditMode = false
   }
-  function keyEvents(event) {
-    event.key === 'Enter' && addList()
-    event.key === 'Esc' && offEditMode() // for Edge Browser
-    event.key === 'Escape' && offEditMode()
-  }
 </script>
 
 <div class="create-list">
   {#if isEditMode}
-    <div use:autoFocusout={offEditMode}
-         class="edit-mode">
-    <textarea bind:value={title}
-              bind:this={textareaEl}
-              on:keydown={keyEvents}
-              placeholder="Enter a title for this list..."></textarea>
+    <div
+      use:autoFocusout={offEditMode}
+      class="edit-mode">
+    <textarea
+      bind:value={title}
+      bind:this={textareaEl}
+      placeholder="Enter a title for this list..."
+      on:keydown={event => {
+        event.key === 'Enter' && addList()
+        event.key === 'Esc' && offEditMode() // for Edge Browser
+        event.key === 'Escape' && offEditMode()
+      }}></textarea>
       <div class="actions">
-        <span class="btn success"
-              on:click={addList}>Add List</span>
-        <span class="btn"
-              on:click={offEditMode}>Cancel</span>
+        <span
+          class="btn success"
+          on:click={addList}>
+          Add List
+        </span>
+        <span
+          class="btn"
+          on:click={offEditMode}>
+          Cancel
+        </span>
       </div>
     </div>
   {:else}
-    <div class="add-another-list"
-         on:click={onEditMode}>
+    <div
+      class="add-another-list"
+      on:click={onEditMode}>
       + Add another list
     </div>
   {/if}

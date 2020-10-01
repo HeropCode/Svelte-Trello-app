@@ -42,12 +42,6 @@
     isEditMode = false
     dispatch('editMode', false)
   }
-  function keyEvents(event) {
-    console.log(event.key)
-    event.key === 'Enter' && saveCard()
-    event.key === 'Esc' && offEditMode() // for Edge Browser
-    event.key === 'Escape' && offEditMode()
-  }
 
   onDestroy(() => {
     offEditMode()
@@ -55,29 +49,47 @@
 </script>
 
 {#if card}
-  <div class="card"
-       data-card-id={card.id}>
+  <div
+    class="card"
+    data-card-id={card.id}>
     {#if isEditMode}
-      <div use:autoFocusout={offEditMode}
-           class="edit-mode">
-        <textarea bind:value={title}
-                  bind:this={textareaEl}
-                  placeholder="Enter a title for this card..."
-                  on:keydown={keyEvents}></textarea>
+      <div
+        use:autoFocusout={offEditMode}
+        class="edit-mode">
+        <textarea
+          bind:value={title}
+          bind:this={textareaEl}
+          placeholder="Enter a title for this card..."
+          on:keydown={event => {
+            console.log(event.key)
+            event.key === 'Enter' && saveCard()
+            event.key === 'Esc' && offEditMode() // for Edge Browser
+            event.key === 'Escape' && offEditMode()
+          }}></textarea>
         <div class="actions">
-          <span class="btn success"
-                on:click={saveCard}>Save</span>
-          <span class="btn"
-                on:click={offEditMode}>Cancel</span>
-          <span class="btn danger"
-                on:click={removeCard}>Delete Card</span>
+          <span
+            class="btn success"
+            on:click={saveCard}>
+            Save
+          </span>
+          <span
+            class="btn"
+            on:click={offEditMode}>
+            Cancel
+          </span>
+          <span
+            class="btn danger"
+            on:click={removeCard}>
+            Delete Card
+          </span>
         </div>
       </div>
     {:else}
       <div class="title">
         {card.title}
-        <div class="btn small"
-             on:click={onEditMode}>
+        <div
+          class="btn small"
+          on:click={onEditMode}>
           Edit
         </div>
       </div>

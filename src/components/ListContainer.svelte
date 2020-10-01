@@ -33,11 +33,13 @@
 </script>
 
 <div class="list-container">
-  <div bind:this={listsEl}
-       class="lists">
+  <div
+    bind:this={listsEl}
+    class="lists">
     {#each $lists as list (list.id)}
-      <List {list}
-            {sortableLists} />
+      <List
+        {list}
+        {sortableLists} />
     {/each}
   </div>
   <CreateList />
@@ -46,6 +48,8 @@
 <style lang="scss">
   .list-container {
     width: 100vw;
+    // calc 함수는 표준 CSS API입니다.
+    // 40px은 Header 컴포넌트의 높잇값입니다.
     height: calc(100vh - 40px);
     padding: 30px;
     box-sizing: border-box;
