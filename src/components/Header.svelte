@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
+    img.logo {
       width: 80px;
       opacity: .5;
     }
