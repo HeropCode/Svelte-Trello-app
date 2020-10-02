@@ -118,11 +118,13 @@
         border-radius: 4px;
       }
     }
+    :global(&.sortable-chosen) {
+      cursor: move;
+    }
   }
   .title {
     position: relative;
     border-radius: 4px;
-    cursor: pointer;
     background: #FFF;
     padding: 6px 8px;
     box-shadow: 0 1px 0 rgba(9, 30, 66, .25);

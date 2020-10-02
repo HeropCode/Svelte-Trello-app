@@ -14,11 +14,12 @@
   }
 
   onMount(() => {
+    // For Lists
     sortableLists = new Sortable(listsEl, {
       // 아래 옵션에 대한 자세한 설명은 List 컴포넌트를 참고하세요.
       group: 'My Lists',
       handle: '.list',
-      delay: 20,
+      delay: 50,
       animation: 0,
       forceFallback: true,
       onEnd(event) {

@@ -19,10 +19,11 @@
   }
 
   onMount(() => {
+    // For Cards
     sortableCards = new Sortable(cardsEl, {
       group: 'My Cards', // 한 목록에서 다른 목록으로 요소를 끌어오려면(DnD) 두 목록의 그룹 값이 같아야 합니다.
       handle: '.card', // 드래그 핸들이 될 요소의 선택자를 입력합니다.
-      delay: 20, // 클릭이 밀리는 것을 방지하기 위해 약간의 지연 시간을 추가합니다.
+      delay: 50, // 클릭이 밀리는 것을 방지하기 위해 약간의 지연 시간을 추가합니다.
       animation: 0, // 정렬할 때 애니메이션 속도(ms)를 지정합니다.
       forceFallback: true, // 다양한 환경의 일관된 Drag&Drop(DnD)을 위해 HTML5 기본 DnD 동작을 무시하고 내장 기능을 사용합니다.
       // 요소의 DnD가 종료되면 실행할 핸들러(함수)를 지정합니다.
@@ -101,6 +102,12 @@
         background: #000;
         border-radius: 4px;
       }
+    }
+    // .sortable-chosen는 SortableJS에서 생성하는 선택자입니다.
+    // Svelte에서는 Hash가 자동으로 붙기 때문에 :global()를 사용해,
+    // .sortable-chosen 선택자에 Hash가 붙지 않도록 합니다.
+    :global(&.sortable-chosen) {
+      cursor: move;
     }
     .list__inner {
       // 카드 목록 영역 크기가 자동 조절이 되도록,
