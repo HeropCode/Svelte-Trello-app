@@ -89,7 +89,7 @@
     // Svelte에서는 Hash가 자동으로 붙기 때문에 :global()를 사용해,
     // .sortable-ghost 선택자에 Hash가 붙지 않도록 합니다.
     :global(&.sortable-ghost) {
-      opacity: 0.1;
+      opacity: 0.2;
       position: relative;
       &::after {
         content: "";
