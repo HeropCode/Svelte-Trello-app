@@ -56,9 +56,9 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 $ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs lodash
 ```
 
-## Issues
+## 확인하세요!
 
-### SCSS with node-sass
+### node-sass
 
 Svelte `<style>`에서 SCSS를 사용할 때,<br />
 `node-sass`를 설치해도 다음과 같은 에러가 발생할 수 있습니다.
