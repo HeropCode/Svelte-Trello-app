@@ -61,7 +61,7 @@ $ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins
 ### node-sass
 
 Svelte `<style>`에서 SCSS를 사용할 때,<br />
-`node-sass`를 설치해도 다음과 같은 에러가 발생할 수 있습니다.
+`node-sass`를 설치해도 VS Code에서 다음과 같은 에러가 발생할 수 있습니다.
 
 ```error
 Cannot find any of modules: sass,node-sass ...
@@ -69,10 +69,9 @@ Cannot find any of modules: sass,node-sass ...
 
 ![Cannot find node-sass module](https://github.com/HeropCode/Svelte-Trello-app/blob/master/assets/issue1-cannot-find-module-node-sass.jpg)
 
-확장 프로그램 'Svelte for VS Code'의 환경설정에서,<br />
+확장 프로그램 __Svelte for VS Code__의 환경설정에서,<br />
 `Svelte > Language-server: Runtime` 옵션에 NodeJS 설치 경로를 입력하세요.<br />
-NodeJS 설치 경로는 터미널에서 다음과 같이 입력해 확인할 수 있습니다.<br />
-완료 후 VS Code를 재부팅해야 합니다!
+NodeJS 설치 경로는 터미널에서 다음과 같이 입력해 확인할 수 있습니다.
 
 ```bash
 # for Mac
@@ -86,4 +85,4 @@ $ where node
 
 ![Svelte language server: runtime](https://github.com/HeropCode/Svelte-Trello-app/blob/master/assets/issue1-language-server-runtime.jpg)
 
-
+설정 완료 후 VS Code를 재부팅하세요!
