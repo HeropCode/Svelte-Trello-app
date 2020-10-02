@@ -1,6 +1,6 @@
 <header>
   <img
-    src="/trello-logo.svg"
+    src="/images/trello-logo.svg"
     alt="Trello"
     class="logo" />
 </header>
