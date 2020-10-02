@@ -69,7 +69,7 @@ Cannot find any of modules: sass,node-sass ...
 
 ![Cannot find node-sass module](https://github.com/HeropCode/Svelte-Trello-app/blob/master/assets/issue1-cannot-find-module-node-sass.jpg)
 
-확장 프로그램 __Svelte for VS Code__의 환경설정에서,<br />
+확장 프로그램 **Svelte for VS Code**의 환경설정에서,<br />
 `Svelte > Language-server: Runtime` 옵션에 NodeJS 설치 경로를 입력하세요.<br />
 NodeJS 설치 경로는 터미널에서 다음과 같이 입력해 확인할 수 있습니다.
 
