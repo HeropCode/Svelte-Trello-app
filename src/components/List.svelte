@@ -1,7 +1,6 @@
 <script>
-  import { onMount } from 'svelte'
   import Sortable from 'sortablejs'
-
+  import { onMount } from 'svelte'
   import { cards } from '~/store/list'
   import Card from './Card.svelte'
   import CreateCard from './CreateCard.svelte'
@@ -9,6 +8,7 @@
 
   export let list
   export let sortableLists
+
   let sortableCards // Card 정렬를 위한 SortableJS 인스턴스를 지정합니다.
   let cardsEl // SortableJS에서 사용할 Card 목록 요소를 지정합니다.
 
@@ -56,8 +56,8 @@
         class="list__cards">
         {#each list.cards as card (card.id)}
           <Card
+            listId={list.id}
             {card}
-            {list}
             on:editMode={disableSortable} />
         {/each}
       </div>

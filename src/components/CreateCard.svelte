@@ -4,6 +4,7 @@
   import { autoFocusout } from '~/actions/autoFocusout'
 
   export let listId
+
   let isEditMode = false
   let title = ''
   let textareaEl

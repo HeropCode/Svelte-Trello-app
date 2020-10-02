@@ -3,8 +3,9 @@
   import { cards } from '~/store/list'
   import { autoFocusout } from '~/actions/autoFocusout'
 
-  export let list
+  export let listId
   export let card
+
   let isEditMode = false
   let title
   let textareaEl
@@ -14,7 +15,7 @@
     // 빈 값이 저장되는 것을 방지.
     if (title.trim()) {
       cards.edit({
-        listId: list.id,
+        listId,
         cardId: card.id,
         title
       })
@@ -23,7 +24,7 @@
   }
   function removeCard() {
     cards.remove({
-      listId: list.id,
+      listId,
       cardId: card.id
     })
     // removeCard 함수는 Edit Mode에서 동작하기 때문에,

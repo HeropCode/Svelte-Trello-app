@@ -1,7 +1,6 @@
 <script>
-  import { onMount } from 'svelte'
   import Sortable from 'sortablejs'
-
+  import { onMount } from 'svelte'
   import { lists } from '~/store/list'
   import List from '~/components/List.svelte'
   import CreateList from '~/components/CreateList.svelte'
