@@ -40,34 +40,32 @@
   })
 </script>
 
-{#if list}
-  <div class="list">
-    <div class="list__inner">
-      <div class="list__heading">
-        <ListTitle
-          {list}
-          on:editMode={disableSortable} />
-        <p>
-          {list.cards.length} cards
-        </p>
-      </div>
-      <div
-        data-list-id={list.id}
-        bind:this={cardsEl}
-        class="list__cards">
-        {#each list.cards as card (card.id)}
-          <Card
-            listId={list.id}
-            {card}
-            on:editMode={disableSortable} />
-        {/each}
-      </div>
-      <CreateCard
-        listId={list.id}
+<div class="list">
+  <div class="list__inner">
+    <div class="list__heading">
+      <ListTitle
+        {list}
         on:editMode={disableSortable} />
+      <p>
+        {list.cards.length} cards
+      </p>
     </div>
+    <div
+      data-list-id={list.id}
+      bind:this={cardsEl}
+      class="list__cards">
+      {#each list.cards as card (card.id)}
+        <Card
+          listId={list.id}
+          {card}
+          on:editMode={disableSortable} />
+      {/each}
+    </div>
+    <CreateCard
+      listId={list.id}
+      on:editMode={disableSortable} />
   </div>
-{/if}
+</div>
 
 <style lang="scss">
   .list {
