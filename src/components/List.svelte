@@ -2,9 +2,9 @@
   import Sortable from 'sortablejs'
   import { onMount } from 'svelte'
   import { cards } from '~/store/list'
-  import Card from './Card.svelte'
-  import CreateCard from './CreateCard.svelte'
-  import ListTitle from './ListTitle.svelte'
+  import Card from '~/components/Card.svelte'
+  import CreateCard from '~/components/CreateCard.svelte'
+  import ListTitle from '~/components/ListTitle.svelte'
 
   export let list
   export let sortableLists
