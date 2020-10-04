@@ -39,10 +39,16 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 
 ## 추가 패키지
 
+> 이번에도 어김없이 예제와 강의를 준비하는 동안 일부 모듈의 버전이 변경되면서 문제가 발생하네요.
+> 여러분이 문제없이 실습하는 가장 좋은 방법은 설치하는 각 모듈을 완성 예제의 `package.json` 버전과 동일하게 설치하는 것입니다.
+> 방법은 `package.json` 파일 내용을 여러분의 실습 프로젝트에 그대로 복/붙하고 터미널에 `npm i`(`npm install`)를 입력하세요. 
+> 그러면 혹시 기존에 설치된 모듈도 `package.json`에 맞게 수정/삭제되니, 쉽게 완성 예제와 동일 버전의 모듈로 설치할 수 있습니다.
+
 - @rollup/plugin-alias: 경로 별칭을 사용해 더 편리하게 모듈을 가져올 수 있습니다.
 - @rollup/plugin-strip: 배포용 제품은(개발 모드가 아닐 때) `console.log` 같은 Console 명령을 제거하는 것이 좋습니다.
 - rollup-plugin-node-builtins: Node 내장 API를 사용할 수 있습니다.
 - rollup-plugin-node-globals: 일부 Node 모듈이 필요로 하는 전역 API를 사용할 수 있습니다.
+- rollup-plugin-replace: 번들 파일의 문자를 대체합니다. 문제가 발생하는 코드를 다른 코드(코드)로 대체 실행하기 위해 사용합니다.
 - svelte-preprocess: PostCSS(Autoprefixer), SCSS, TypeScript 등을 지원하는 Svelte 전 처리기입니다.
 - autoprefixer: CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.(9버전을 사용하면 내부에서 postcss를 설치합니다, 10버전 이상은 postcss를 별도 설치해야 합니다)
 - node-sass: SCSS를 CSS로 컴파일합니다.
@@ -51,9 +57,10 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 - lodash: 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리입니다.
 
 추가 패키지를 다음과 같이 한번에 설치할 수 있습니다.
+(일부 모듈 버전에 변경되면서 강의 내용과 진행이 달라지는 문제가 발생해 모든 모듈에 버전을 일괄 명시했으니 참고하세요)
 
 ```bash
-$ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer@^9 node-sass crypto-random-string sortablejs lodash
+$ npm i -D @rollup/plugin-alias@3.1.1 @rollup/plugin-strip@^2.0.0 rollup-plugin-node-builtins@^2.1.2 rollup-plugin-node-globals@^1.4.0 rollup-plugin-replace@^2.2.0 svelte-preprocess@^4.1.2 autoprefixer@^9.8.6 node-sass@^4.14.1 crypto-random-string@^3.2.0 sortablejs@^1.10.2 lodash@^4.17.20
 ```
 
 ## 확인하세요!
