@@ -44,7 +44,7 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 - rollup-plugin-node-builtins: Node 내장 API를 사용할 수 있습니다.
 - rollup-plugin-node-globals: 일부 Node 모듈이 필요로 하는 전역 API를 사용할 수 있습니다.
 - svelte-preprocess: PostCSS(Autoprefixer), SCSS, TypeScript 등을 지원하는 Svelte 전 처리기입니다.
-- autoprefixer: CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.
+- autoprefixer: CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.(9버전을 사용하면 내부에서 postcss를 설치합니다, 10버전 이상은 postcss를 별도 설치해야 합니다)
 - node-sass: SCSS를 CSS로 컴파일합니다.
 - crypto-random-string: ID로 사용할 고유한 랜덤 문자열을 생성합니다.
 - sortablejs: Drag and Drop으로 목록을 쉽게 정렬할 수 있습니다.
@@ -53,7 +53,7 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 추가 패키지를 다음과 같이 한번에 설치할 수 있습니다.
 
 ```bash
-$ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer node-sass crypto-random-string sortablejs lodash
+$ npm i -D @rollup/plugin-alias @rollup/plugin-strip rollup-plugin-node-builtins rollup-plugin-node-globals svelte-preprocess autoprefixer@^9 node-sass crypto-random-string sortablejs lodash
 ```
 
 ## 확인하세요!

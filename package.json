@@ -7,7 +7,7 @@
     "start": "sirv public"
   },
   "browserslist": [
-    "> 1%",
+    "not ie <= 10",
     "last 2 versions"
   ],
   "devDependencies": {

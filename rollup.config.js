@@ -73,7 +73,8 @@ export default {
 					// 단, style 태그에 lang="scss"가 지정되어 있어야 적용됩니다.
 					prependData: '@import "./src/scss/main.scss";',
 				},
-				// PostCSS는 Autoprefixer를 설치하면 같이 설치됩니다.
+				// PostCSS는 Autoprefixer를 설치하면 같이 설치됩니다.(9버전)
+				// 10버전 이상은 postcss를 별도 설치해야 합니다.(npm i -D postcss)
 				// Autoprefixer는 CSS에 자동으로 공급 업체 접두사(Vendor prefix)를 적용합니다.
 				postcss: {
 					plugins: [
