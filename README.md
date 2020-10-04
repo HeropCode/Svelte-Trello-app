@@ -41,7 +41,7 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 
 > 이번에도 어김없이 예제와 강의를 준비하는 동안 일부 모듈의 버전이 변경되면서 문제가 발생하네요.<br />
 > 여러분이 문제없이 실습하는 가장 좋은 방법은 설치하는 각 모듈을 완성 예제의 `package.json` 버전과 동일하게 설치하는 것입니다.<br />
-> 가장 빠르고 쉬운 방법은 `package.json` 파일 내용을 여러분의 실습 프로젝트에 그대로 복/붙하고 터미널에 `npm i`(`npm install`)를 입력하세요.<br />
+> 가장 빠르고 쉬운 방법은 `package.json` 파일 내용을 여러분의 실습 프로젝트에 그대로 복사/붙여넣기 하고 터미널에 `npm i`(`npm install`)를 입력하세요.<br />
 > 그러면 혹시 기존에 설치된 모듈도 `package.json`에 맞게 수정/삭제되니, 쉽게 완성 예제와 동일 버전의 모듈로 설치할 수 있습니다.
 
 - @rollup/plugin-alias: 경로 별칭을 사용해 더 편리하게 모듈을 가져올 수 있습니다.
