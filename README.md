@@ -11,11 +11,14 @@ Svelte를 사용하는 Trello 클론 프로젝트입니다.
 ```bash
 # 원하는 경로에 접근
 $ cd Desktop
+
 # 프로젝트 생성
 # npx degit sveltejs/template 프로젝트(폴더)_이름
 $ npx degit sveltejs/template svelte-trello-app
+
 # 생성한 프로젝트로 들어가기
 $ cd svelte-trello-app
+
 # 프로젝트 VSCode에서 열기(아래 명령이 동작하지 않으면 수동으로 열어주세요)
 $ code .
 ```
