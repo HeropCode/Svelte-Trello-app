@@ -41,16 +41,16 @@
         event.key === 'Escape' && offEditMode()
       }}></textarea>
       <div class="actions">
-        <span
+        <div
           class="btn success"
           on:click={addList}>
           Add List
-        </span>
-        <span
+        </div>
+        <div
           class="btn"
           on:click={offEditMode}>
           Cancel
-        </span>
+        </div>
       </div>
     </div>
   {:else}
@@ -71,6 +71,7 @@
     vertical-align: top;
     width: 290px;
     margin: 0 4px;
+    padding: 10px 8px;
     // rgba() 함수는 인수로 Red, Green, Blue, Opacity를 순서대로 받아야 하지만,
     // SCSS에서 제공하는 같은 이름의 rgba()가 있으며,
     // 이 함수는 Color, Opacity만 있으면 동작하기 때문에 Hex(hexadecimal) Color 사용시 아주 편리합니다.
@@ -82,11 +83,5 @@
     &:hover {
       background: #ebecf0;
     }
-  }
-  .edit-mode {
-    padding: 10px 8px;
-  }
-  .add-another-list {
-    padding: 10px 8px;
   }
 </style>

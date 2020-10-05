@@ -48,16 +48,16 @@
         event.key === 'Escape' && offEditMode()
       }}></textarea>
     <div class="actions">
-      <span
+      <div
         class="btn success"
         on:click={addCard}>
         Add Card
-      </span>
-      <span
+      </div>
+      <div
         class="btn"
         on:click={offEditMode}>
         Cancel
-      </span>
+      </div>
     </div>
   </div>
 {:else}
