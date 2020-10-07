@@ -49,14 +49,13 @@
   })
 </script>
 
-{#if card}
-  <div
-    class="card"
-    data-card-id={card.id}>
-    {#if isEditMode}
-      <div
-        use:autoFocusout={offEditMode}
-        class="edit-mode">
+<div
+  class="card"
+  data-card-id={card.id}>
+  {#if isEditMode}
+    <div
+      use:autoFocusout={offEditMode}
+      class="edit-mode">
         <textarea
           bind:value={title}
           bind:this={textareaEl}
@@ -67,36 +66,35 @@
             event.key === 'Esc' && offEditMode() // for Edge Browser
             event.key === 'Escape' && offEditMode()
           }}></textarea>
-        <div class="actions">
-          <div
-            class="btn success"
-            on:click={saveCard}>
-            Save
-          </div>
-          <div
-            class="btn"
-            on:click={offEditMode}>
-            Cancel
-          </div>
-          <div
-            class="btn danger"
-            on:click={removeCard}>
-            Delete Card
-          </div>
-        </div>
-      </div>
-    {:else}
-      <div class="title">
-        {card.title}
+      <div class="actions">
         <div
-          class="btn small"
-          on:click={onEditMode}>
-          Edit
+          class="btn success"
+          on:click={saveCard}>
+          Save
+        </div>
+        <div
+          class="btn"
+          on:click={offEditMode}>
+          Cancel
+        </div>
+        <div
+          class="btn danger"
+          on:click={removeCard}>
+          Delete Card
         </div>
       </div>
-    {/if}
-  </div>
-{/if}
+    </div>
+  {:else}
+    <div class="title">
+      {card.title}
+      <div
+        class="btn small"
+        on:click={onEditMode}>
+        Edit
+      </div>
+    </div>
+  {/if}
+</div>
 
 <style lang="scss">
   .card {
