@@ -16,7 +16,7 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-strip": "^2.0.0",
     "autoprefixer": "^9.8.6",
-    "crypto-random-string": "^3.2.0",
+    "crypto-random-string": "3.2.0",
     "lodash": "^4.17.20",
     "node-sass": "^4.14.1",
     "rollup": "^2.3.4",

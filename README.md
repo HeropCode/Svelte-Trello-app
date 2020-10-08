@@ -63,7 +63,7 @@ $ npm i -D svelte@^3 @rollup/plugin-commonjs@^15 @rollup/plugin-node-resolve@^9
 (일부 모듈 버전에 변경되면서 강의 내용과 진행이 달라지는 문제가 발생할 수 있어 모든 모듈에 버전을 일괄 명시했으니 참고하세요)
 
 ```bash
-$ npm i -D @rollup/plugin-alias@3.1.1 @rollup/plugin-strip@^2.0.0 rollup-plugin-node-builtins@^2.1.2 rollup-plugin-node-globals@^1.4.0 rollup-plugin-replace@^2.2.0 svelte-preprocess@^4.1.2 autoprefixer@^9.8.6 node-sass@^4.14.1 crypto-random-string@^3.2.0 sortablejs@^1.10.2 lodash@^4.17.20
+$ npm i -D @rollup/plugin-alias@3.1.1 @rollup/plugin-strip@^2.0.0 rollup-plugin-node-builtins@^2.1.2 rollup-plugin-node-globals@^1.4.0 rollup-plugin-replace@^2.2.0 svelte-preprocess@^4.1.2 autoprefixer@^9.8.6 node-sass@^4.14.1 crypto-random-string@3.2.0 sortablejs@^1.10.2 lodash@^4.17.20
 ```
 
 ## 확인하세요!
