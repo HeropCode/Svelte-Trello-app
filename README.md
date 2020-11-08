@@ -1,6 +1,9 @@
 # Svelte Trello clone app
 
 Svelte를 사용하는 Trello 클론 프로젝트입니다.
+주요 내용은 해당 강의를 참고하세요.<br>
+
+[Svelte.js Core API 완벽 가이드](https://inf.run/bXbH)
 
 [DEMO](https://boring-agnesi-165a0d.netlify.app/)
 
