@@ -1,13 +1,23 @@
 # Svelte Trello clone app
 
-Svelte를 사용하는 Trello 클론 프로젝트입니다.
-주요 내용은 해당 강의를 참고하세요.<br>
+Svelte를 사용하는 Trello 클론 프로젝트입니다.<br>
+주요 내용은 해당 강의를 참고하세요.
 
-[Svelte.js Core API 완벽 가이드](https://inf.run/bXbH)
+[Svelte.js Core API 완벽 가이드](https://www.inflearn.com/course/스벨트-완벽-가이드?inst=c1552804)
 
 [DEMO](https://boring-agnesi-165a0d.netlify.app/)
 
 ![demo gif](https://github.com/HeropCode/Svelte-Trello-app/blob/master/assets/svelte-trello-example.gif)
+
+## Snowpack 버전
+
+이 프로젝트에서 사용하는 Rollup은 프로젝트 빌드를 위한 이미 훌륭한 번들러이지만,<br>
+새롭게 등장한 다음 세대 빌드 도구인 Snowpack이 많은 주목을 받고 있습니다.<br>
+Snowpack는 Svelte를 공식적으로 지원하며, Svelte도 Snowpack을 사용한 새로운 템플릿을 준비하고 있습니다.<br>
+관련해 Svelte와 Snowpack으로 프로젝트를 어떻게 구성할 수 있는지 학습할 수 있도록 예제를 준비했습니다.<br>
+이 프로젝트를 Snowpack으로 어떻게 이관하는지 다음 GitHub 저장소에서 확인하세요!
+
+[Svelte Trello clone app with Snowpack](https://github.com/HeropCode/Svelte-Trello-app-Snowpack) 
 
 ## Svelte template(Rollup)으로 프로젝트 생성
 
